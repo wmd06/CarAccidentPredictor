@@ -19,7 +19,7 @@ Traffic accidents result in severe consequences, including loss of life, injurie
   - Missing values imputed.
   - Numerical features standardized.
   - Categorical weather conditions numerically encoded (e.g., Clear = 0, Rain = 3).
-
+ 
 ## Methodology
 ### Models and Techniques
 1. **Neural Network**: Explored initially but rejected due to overfitting and interpretability challenges.
@@ -38,13 +38,43 @@ Traffic accidents result in severe consequences, including loss of life, injurie
 - **Random Forest Performance**:
   - Test Accuracy: **79.13%**
   - Train Accuracy: **83.27%**
-  - ROC-AUC Score: **0.91**
+  - ROC-AUC Score: **0.906**
   - Confusion Matrix: High true positive and negative rates.
 - **Feature Importance**:
   - Temporal features (e.g., time of day) were the most influential.
   - Weather features (e.g., rain, fog) significantly contributed.
   - Road conditions (e.g., traffic signals) also played a role.
+ 
+- **User Interface**:
+    - ***Live Data Integration***
+        A real-time user interface has been developed to fetch live traffic and weather data. This data is processed through the trained 
+        Random Forest model to predict accident probabilities for specific locations and times. The interface integrates APIs for real- 
+        time data, ensuring up-to-date predictions.
 
+      ![1](https://github.com/user-attachments/assets/3312748a-0f10-4e52-841e-294afbf12c7e)
+      
+    - ***User Input***
+        The interface allows users to input custom data points, including:
+          1. Location: Latitude and longitude.
+          2. Temporal Information: Time, day, and month.
+          3. Weather Conditions: Temperature, wind speed, precipitation, and visibility.
+          4. Road Features: Presence of traffic signals, bumps, and other road indicators.
+
+      ![3](https://github.com/user-attachments/assets/3397eb6a-83d6-43c1-a505-4fdbb6974160)
+
+    - ***Output Display***
+          Predicted probabilities of traffic accidents are displayed on the interface, categorized into risk levels:
+      
+          - Low: Probability < 25%
+      
+          - Medium-Low: 25% ≤ Probability < 50%
+      
+          - Medium-High: 50% ≤ Probability < 75%
+      
+          - High: Probability ≥ 75%
+
+      ![2](https://github.com/user-attachments/assets/306ffe4b-c5ad-4d7d-acf1-354e8d512045)
+  
 ## Ethical Considerations
 1. **Bias in Data**:
    - Geographic bias with urban overrepresentation.
@@ -70,7 +100,6 @@ Traffic accidents result in severe consequences, including loss of life, injurie
 
 ## Resources
 - [US Accidents Dataset](https://www.kaggle.com/sobhanmoosavi/us-accidents)
-- GitHub Repository: [Car Accident Predictor](https://github.com/wmd06/CarAccidentPredictor.git)
 
 ## Authors
 - Antoine Abou Faycal
